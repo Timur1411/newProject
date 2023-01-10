@@ -1,3 +1,5 @@
+package Task19;
+
 import java.util.Scanner;
 
 public class test3 {
