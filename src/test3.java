@@ -1,21 +1,42 @@
+import java.util.Scanner;
+
 public class test3 {
-    public static void main(String[] args){
-        System.out.println(test(1,2,3,4,5));
-        System.out.println(test(1.2,1.3,1.4,1.5));
-        System.out.println(test(1>2,2<3,3==3));
-        System.out.println(test('H','E','L','L','O'));
-    }
-    static int test(int a,int b,int c,int d,int e){
-        return a+b+c+d+e;
-    }
-    static double test(double a,double b, double c, double d){
-        return a+b+c+d;
-    }
-    static boolean test(boolean a,boolean b, boolean c){
-        return a&b&c;
-    }
-    static String test(char a,char b, char c, char d, char e){
-        String s=a+""+b+""+c+""+d+""+e;
-        return s;
+    public static void main(String[] args) {
+        car[] cars = new car[5];
+        cars[0] = new car("Тойота", "Черный", "Седан", 123);
+        cars[1] = new car("Ниссан", "Белый", "Купе", 234);
+        cars[2] = new car("Мазда", "Красный", "Хечбэк", 345);
+        cars[3] = new car("Лексус", "Синий", "Внедорожник", 456);
+        cars[4] = new car("Хонда", "Зеленый", "Минивен", 567);
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите марку авто: ");
+        String a = in.next();
+        System.out.print("Введите цвет авто: ");
+        String b = in.next();
+        System.out.print("Введите тип авто: ");
+        String c = in.next();
+        System.out.print("Введите номер авто: ");
+        int d = in.nextInt();
+        car findcar=new car(a,b,c,d);
+        String mark;
+        String color;
+        String type;
+        int number;
+        String result=null;
+        for(int i=0;i<=4;i++){
+            car car= cars[i];
+            if (findcar.equals(car)) {
+                mark = findcar.carname;
+                color = findcar.carcolor;
+                type = findcar.cartype;
+                number = findcar.carregnumber;
+                result = "\tМарка: " + mark + "\n\tЦвет: " + color + "\n\tТип кузова: " + type + "\n\tРег.Номер: " + number;
+                break;
+            }
+        }
+        if(result==null){
+            result="\tМашина не найдена";
+        }
+        System.out.println("Результат:\n"+result);
     }
 }
