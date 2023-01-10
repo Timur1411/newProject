@@ -2,7 +2,7 @@ package Task19;
 
 import java.util.Scanner;
 
-public class test3 {
+public class task19 {
     public static void main(String[] args) {
         car[] cars = new car[5];
         cars[0] = new car("Тойота", "Черный", "Седан", 123);
