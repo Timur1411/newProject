@@ -3,10 +3,10 @@ package Task19;
 import java.util.Objects;
 
 public class Car {
-    String carname;
-    String carcolor;
-    String cartype;
-    int carregnumber;
+    private String carname;
+    private String carcolor;
+    private String cartype;
+    private int carregnumber;
 
     Car(String name, String color, String type, int number) {
         this.carname = name;
@@ -45,6 +45,11 @@ public class Car {
 
     public void setCarregnumber(int carregnumber) {
         this.carregnumber = carregnumber;
+    }
+
+    public String getFields(){
+        String print="\tМарка: "+carname+"\n\tЦвет: "+carcolor+"\n\tТип кузова: "+cartype+"\n\tРег.номер: "+carregnumber;
+        return print;
     }
 
     @Override

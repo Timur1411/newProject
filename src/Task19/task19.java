@@ -12,16 +12,16 @@ public class task19 {
         cars[3] = new Car("Лексус", "Синий", "Внедорожник", 456);
         cars[4] = new Car("Хонда", "Зеленый", "Минивен", 567);
 
-        Scanner in = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Введите марку авто: ");
-        String a = in.next();
+        String a = scanner.next();
         System.out.print("Введите цвет авто: ");
-        String b = in.next();
+        String b = scanner.next();
         System.out.print("Введите тип авто: ");
-        String c = in.next();
+        String c = scanner.next();
         System.out.print("Введите номер авто: ");
-        int d = in.nextInt();
-        in.close();
+        int d = scanner.nextInt();
+        scanner.close();
 
         Car findcar=new Car(a,b,c,d);
 
@@ -30,13 +30,13 @@ public class task19 {
         for(int i=0;i<=4;i++){
             Car car= cars[i];
             if (findcar.equals(car)) {
-                result = "\tМарка: " + findcar.carname + "\n\tЦвет: " + findcar.carcolor + "\n\tТип кузова: " + findcar.cartype + "\n\tРег.Номер: " + findcar.carregnumber;
+                result= car.getFields();
                 break;
             }
         }
         if(result==null){
             result="\tМашина не найдена";
         }
-        System.out.println("Результат:\n"+result);
+        System.out.println(result);
     }
 }
