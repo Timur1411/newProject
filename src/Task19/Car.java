@@ -2,13 +2,13 @@ package Task19;
 
 import java.util.Objects;
 
-public class car {
+public class Car {
     String carname;
     String carcolor;
     String cartype;
     int carregnumber;
 
-    car(String name, String color, String type, int number) {
+    Car(String name, String color, String type, int number) {
         this.carname = name;
         this.carcolor = color;
         this.cartype = type;
@@ -50,23 +50,23 @@ public class car {
     @Override
     public boolean equals(Object obj)
     {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        else if (obj == null)
+        }
+        else if (obj == null) {
             return false;
-        else if (getClass() != obj.getClass())
+        }
+        else if (getClass() != obj.getClass()) {
             return false;
+        }
 
-        car other = (car) obj;
-        if (!Objects.equals(carname, other.getCarname()))
+        Car other = (Car) obj;
+        if (Objects.equals(carname, other.getCarname())&&Objects.equals(carcolor, other.getCarcolor())&&Objects.equals(cartype, other.getCartype())&&carregnumber==other.getCarregnumber()) {
+            return true;
+        }
+        else {
             return false;
-        else if (!Objects.equals(carcolor, other.getCarcolor()))
-            return false;
-        else if (!Objects.equals(cartype, other.getCartype()))
-            return false;
-        else if (carregnumber != other.getCarregnumber())
-            return false;
-        return true;
+        }
     }
 }
 

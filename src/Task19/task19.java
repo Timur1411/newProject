@@ -4,12 +4,14 @@ import java.util.Scanner;
 
 public class task19 {
     public static void main(String[] args) {
-        car[] cars = new car[5];
-        cars[0] = new car("Тойота", "Черный", "Седан", 123);
-        cars[1] = new car("Ниссан", "Белый", "Купе", 234);
-        cars[2] = new car("Мазда", "Красный", "Хечбэк", 345);
-        cars[3] = new car("Лексус", "Синий", "Внедорожник", 456);
-        cars[4] = new car("Хонда", "Зеленый", "Минивен", 567);
+
+        Car[] cars = new Car[5];
+        cars[0] = new Car("Тойота", "Черный", "Седан", 123);
+        cars[1] = new Car("Ниссан", "Белый", "Купе", 234);
+        cars[2] = new Car("Мазда", "Красный", "Хечбэк", 345);
+        cars[3] = new Car("Лексус", "Синий", "Внедорожник", 456);
+        cars[4] = new Car("Хонда", "Зеленый", "Минивен", 567);
+
         Scanner in = new Scanner(System.in);
         System.out.print("Введите марку авто: ");
         String a = in.next();
@@ -19,20 +21,16 @@ public class task19 {
         String c = in.next();
         System.out.print("Введите номер авто: ");
         int d = in.nextInt();
-        car findcar=new car(a,b,c,d);
-        String mark;
-        String color;
-        String type;
-        int number;
+        in.close();
+
+        Car findcar=new Car(a,b,c,d);
+
         String result=null;
+
         for(int i=0;i<=4;i++){
-            car car= cars[i];
+            Car car= cars[i];
             if (findcar.equals(car)) {
-                mark = findcar.carname;
-                color = findcar.carcolor;
-                type = findcar.cartype;
-                number = findcar.carregnumber;
-                result = "\tМарка: " + mark + "\n\tЦвет: " + color + "\n\tТип кузова: " + type + "\n\tРег.Номер: " + number;
+                result = "\tМарка: " + findcar.carname + "\n\tЦвет: " + findcar.carcolor + "\n\tТип кузова: " + findcar.cartype + "\n\tРег.Номер: " + findcar.carregnumber;
                 break;
             }
         }
