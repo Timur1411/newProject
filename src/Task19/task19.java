@@ -23,20 +23,22 @@ public class task19 {
         int d = scanner.nextInt();
         scanner.close();
 
-        Car findcar=new Car(a,b,c,d);
+        Car findcar = new Car(a, b, c, d);
 
-        String result=null;
+        String result = null;
 
-        for(int i=0;i<=4;i++){
-            Car car= cars[i];
+        for (int i = 0; i <= 4; i++) {
+            Car car = cars[i];
             if (findcar.equals(car)) {
-                result= car.getFields();
+                result = car.toString();
                 break;
             }
         }
-        if(result==null){
-            result="\tМашина не найдена";
+
+        if (result == null) {
+            System.out.println("\tМашина не найдена");
+        } else {
+            System.out.println(result);
         }
-        System.out.println(result);
     }
 }

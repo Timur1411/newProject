@@ -3,73 +3,69 @@ package Task19;
 import java.util.Objects;
 
 public class Car {
-    private String carname;
-    private String carcolor;
-    private String cartype;
-    private int carregnumber;
+    private String name;
+    private String color;
+    private String type;
+    private int number;
 
     Car(String name, String color, String type, int number) {
-        this.carname = name;
-        this.carcolor = color;
-        this.cartype = type;
-        this.carregnumber = number;
+        this.name = name;
+        this.color = color;
+        this.type = type;
+        this.number = number;
     }
 
-    public String getCarname() {
-        return carname;
+    public String getName() {
+        return name;
     }
 
-    public void setCarname(String carname) {
-        this.carname = carname;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getCarcolor() {
-        return carcolor;
+    public String getColor() {
+        return color;
     }
 
-    public void setCarcolor(String carcolor) {
-        this.carcolor = carcolor;
+    public void setColor(String color) {
+        this.color = color;
     }
 
-    public String getCartype() {
-        return cartype;
+    public String getType() {
+        return type;
     }
 
-    public void setCartype(String cartype) {
-        this.cartype = cartype;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public int getCarregnumber() {
-        return carregnumber;
+    public int getNumber() {
+        return number;
     }
 
-    public void setCarregnumber(int carregnumber) {
-        this.carregnumber = carregnumber;
-    }
-
-    public String getFields(){
-        String print="\tМарка: "+carname+"\n\tЦвет: "+carcolor+"\n\tТип кузова: "+cartype+"\n\tРег.номер: "+carregnumber;
-        return print;
+    public void setNumber(int number) {
+        this.number = number;
     }
 
     @Override
-    public boolean equals(Object obj)
-    {
+    public String toString() {
+        return "\tМарка: " + name + "\n\tЦвет: " + color + "\n\tТип кузова: " + type + "\n\tРег.номер: " + number;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
         if (this == obj) {
             return true;
-        }
-        else if (obj == null) {
+        } else if (obj == null) {
             return false;
-        }
-        else if (getClass() != obj.getClass()) {
+        } else if (getClass() != obj.getClass()) {
             return false;
         }
 
         Car other = (Car) obj;
-        if (Objects.equals(carname, other.getCarname())&&Objects.equals(carcolor, other.getCarcolor())&&Objects.equals(cartype, other.getCartype())&&carregnumber==other.getCarregnumber()) {
+        if (Objects.equals(name, other.getName()) && Objects.equals(color, other.getColor()) && Objects.equals(type, other.getType()) && number == other.getNumber()) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
